@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+:root {
+  --white-color: white;
+  --black-color: black;
+  --gray-color: gray;
+  --light-gray-color: lightgray;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+header {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  padding: 20px 50px;
+  background-color: rgb(255, 246, 119);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 48px;
+  font-weight: 600;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.logo-container:hover {
+  transform: scale(1.02);
+}
+
+#logo {
+  width: 100px;
+}
+
+.header-right {
+  display: flex;
+  justify-self: flex-end;
+  gap: 10px;
+}
+
+.search-bar {
+  display: flex;
+  background-color: var(--white-color);
+  border: 2px solid var(--black-color);
+  padding: 5px;
+  cursor: pointer;
+  height: 25px;
+  width: 300px;
+  margin-right: 50px;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+}
+
+.search-bar:hover {
+  background-color: var(--light-gray-color);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: none;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 25px;
+}
