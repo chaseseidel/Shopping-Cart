@@ -15,7 +15,9 @@ body {
 header {
   display: grid;
   align-items: center;
+  justify-content: space-between;
   grid-auto-flow: column;
+  grid-auto-columns: 500px;
   padding: 20px 50px;
   background-color: rgb(255, 246, 119);
 }
@@ -38,6 +40,37 @@ header {
 
 #logo {
   width: 100px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.category {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.category::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+
+.category:hover::after {
+  width: 100%;
 }
 
 .header-right {
