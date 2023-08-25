@@ -1,0 +1,54 @@
+.stock-img {
+  width: 550px;
+  cursor: pointer;
+}
+
+.ad {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(232, 255, 0, 0.2) 70%,
+    rgba(254, 255, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 50px;
+  gap: 500px;
+}
+
+.ad-left-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ad-left-container h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.ad-left-container p {
+  font-size: 1.5rem;
+}
+
+.shop {
+  width: 100px;
+  border-radius: 20px;
+  border: 2px solid var(--black-color);
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.shop:hover {
+  background-color: var(--light-gray-color);
+}
+
+.stock-images {
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: column;
+  padding: 50px;
+  gap: 100px;
+}
