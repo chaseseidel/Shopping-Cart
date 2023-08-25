@@ -1,9 +1,10 @@
 import Icon from "../Header/Icon";
 import Delete from "../../assets/images/delete.png";
 import Button from "../../components/Button";
-import { useEffect } from "react";
 
-function CartItem({ item, editQuantity }) {
+function CartItem({ item, removeItem, editQuantity }) {
+  const price = (item.product.price * item.quantity).toFixed(2);
+
   return (
     <li key={item.id} className="cart-item">
       <div
@@ -13,6 +14,7 @@ function CartItem({ item, editQuantity }) {
         className="cart-img"
       />
       <h3>{item.product.title}</h3>
+      <p className="cart-price ">{`$${price}`}</p>
       <div className="quantity">
         <Button
           text="-"
@@ -26,7 +28,7 @@ function CartItem({ item, editQuantity }) {
           onClick={() => editQuantity(item, true)}
         />
       </div>
-      <Icon src={Delete} alt="Delete" />
+      <Icon src={Delete} alt="Delete" onClick={() => removeItem(item)} />
     </li>
   );
 }
