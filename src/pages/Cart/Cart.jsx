@@ -1,10 +1,11 @@
-import Header from "./Header";
-import CartItem from "./CartItem";
+import Header from "./components/Header";
 import Button from "../../components/Button";
-import Modal from "./Modal";
-import Total from "./Total";
-import { useState, useEffect } from "react";
+import Modal from "./components/Modal";
+import Total from "./components/Total";
+import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import CartItems from "./components/CartItems";
+import EmptyCart from "./components/EmptyCart";
 
 function Cart({ isActive, cart, exitCart, removeItem, editQuantity }) {
   useEffect(() => {
@@ -20,18 +21,19 @@ function Cart({ isActive, cart, exitCart, removeItem, editQuantity }) {
       {isActive && (
         <Modal onClick={exitCart}>
           <Header onClick={exitCart} />
-          <ul className="cart-items">
-            {cart.map((item) => (
-              <CartItem
-                item={item}
+          {cart.length > 0 ? (
+            <>
+              <CartItems
+                cart={cart}
                 removeItem={removeItem}
                 editQuantity={editQuantity}
-                key={item.id}
               />
-            ))}
-          </ul>
-          <Total cart={cart} />
-          <Button text="Checkout" style="checkout" />
+              <Total cart={cart} />
+              <Button text="Checkout" style="checkout" />
+            </>
+          ) : (
+            <EmptyCart />
+          )}
         </Modal>
       )}
     </AnimatePresence>
