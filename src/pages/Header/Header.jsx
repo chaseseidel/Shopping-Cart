@@ -6,15 +6,16 @@ import Favorite from "../../assets/images/favorite.png";
 import Cart from "../../assets/images/cart.png";
 import Searchbar from "./SearchBar";
 import Button from "../../components/Button";
+import IconBadge from "./IconBadge";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ cart, cartClick }) {
   const navigate = useNavigate();
 
   return (
     <header>
       <Logo />
-      <ul className="categories">
+      <nav className="categories">
         <Button text="Men" style="category" onClick={() => navigate("/men")} />
         <Button
           text="Women"
@@ -31,13 +32,15 @@ function Header() {
           style="category"
           onClick={() => navigate("/electronics")}
         />
-      </ul>
-      <ul className="header-right">
+      </nav>
+      <nav className="header-right">
         <Searchbar src={Search} alt="Search" />
         <Icon src={Account} alt="Profile" />
         <Icon src={Favorite} alt="Favorites" />
-        <Icon src={Cart} alt="Cart" />
-      </ul>
+        <Icon src={Cart} alt="Cart" onClick={cartClick}>
+          <IconBadge cart={cart} />
+        </Icon>
+      </nav>
     </header>
   );
 }
