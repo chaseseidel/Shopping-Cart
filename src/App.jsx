@@ -1,6 +1,6 @@
 import Header from "./pages/Header/Header";
 import Cart from "./pages/Cart/Cart";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -39,17 +39,15 @@ function App() {
 
   return (
     <>
-      <Header cartClick={toggleCart} />
+      <Header cart={cart} cartClick={toggleCart} />
       <Outlet context={[addItemToCart]} />
-      {cartActive && (
-        <Cart
-          isActive={cartActive}
-          cart={cart}
-          exitCart={toggleCart}
-          removeItem={removeItemFromCart}
-          editQuantity={editQuantity}
-        />
-      )}
+      <Cart
+        isActive={cartActive}
+        cart={cart}
+        exitCart={toggleCart}
+        removeItem={removeItemFromCart}
+        editQuantity={editQuantity}
+      />
     </>
   );
 }
