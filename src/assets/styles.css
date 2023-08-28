@@ -139,7 +139,9 @@ a {
   width: 25px;
 }
 
-.loading {
+.loading,
+.network-error,
+.error {
   height: 500px;
   display: flex;
   justify-content: center;
@@ -289,7 +291,7 @@ a {
   width: 200px;
   margin: 25px 50px;
   padding: 15px;
-  transition-property: color, border-color, background-color;
+  transition-property: color, border-color, background-color, transform;
   transition-timing-function: ease-in-out;
   transition-duration: 250ms;
   cursor: pointer;
@@ -298,6 +300,10 @@ a {
 .checkout:hover {
   color: var(--black-color);
   background-color: var(--white-color);
+}
+
+.checkout:active {
+  transform: scale(0.9);
 }
 
 .exit-cart {
