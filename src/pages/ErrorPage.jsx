@@ -1,5 +1,5 @@
 function ErrorPage() {
-  return <div>{"This page doesn't exist!"}</div>;
+  return <div className="error">404 Error. This page does not exist.</div>;
 }
 
 export default ErrorPage;
