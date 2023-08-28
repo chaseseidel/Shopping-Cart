@@ -1,6 +1,6 @@
 import Button from "../../components/Button";
 
-function Product({ product }) {
+function Product({ product, addItem }) {
   return (
     <div className="product" key={product.id}>
       <div
@@ -8,10 +8,14 @@ function Product({ product }) {
           backgroundImage: `url(${product.image})`,
         }}
         className="product-img"
-      ></div>
+      />
       <h3>{product.title}</h3>
       <p className="price">{`$${product.price}`}</p>
-      <Button text="Add To Cart" style="add" />
+      <Button
+        text="Add To Cart"
+        style="add-to-cart"
+        onClick={() => addItem(product)}
+      />
     </div>
   );
 }
