@@ -7,14 +7,14 @@ import { AnimatePresence } from "framer-motion";
 import CartItems from "./components/CartItems";
 import EmptyCart from "./components/EmptyCart";
 
+const noScroll = () => window.scrollTo(0, 0);
+
 function Cart({ isActive, cart, exitCart, removeItem, editQuantity }) {
   useEffect(() => {
-    const noScroll = () => window.scrollTo(0, 0);
-
-    window.addEventListener("scroll", noScroll);
-
-    return () => window.removeEventListener("scroll", noScroll);
-  }, []);
+    isActive
+      ? window.addEventListener("scroll", noScroll)
+      : window.removeEventListener("scroll", noScroll);
+  }, [isActive]);
 
   return (
     <AnimatePresence>
