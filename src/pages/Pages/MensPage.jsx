@@ -1,5 +1,5 @@
 import Product from "./Product";
-import useMensProducts from "../../hooks/useMensProducts";
+import useMensProducts from "../../hooks/useMensProducts.js";
 import LoadingPage from "../LoadingPage";
 import { useOutletContext } from "react-router-dom";
 import NetworkError from "./NetworkError";
