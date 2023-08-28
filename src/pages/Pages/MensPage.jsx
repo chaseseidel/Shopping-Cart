@@ -2,6 +2,7 @@ import Product from "./Product";
 import useMensProducts from "../../hooks/useMensProducts";
 import LoadingPage from "../LoadingPage";
 import { useOutletContext } from "react-router-dom";
+import NetworkError from "./NetworkError";
 
 function MensPage() {
   const { products, error, loading } = useMensProducts();
@@ -12,7 +13,7 @@ function MensPage() {
   }
 
   if (error) {
-    return <div className="loading">A network error was encountered.</div>;
+    return <NetworkError />;
   }
 
   return (
